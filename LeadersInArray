@@ -1,0 +1,13 @@
+public class Solution {
+    public ArrayList<Integer> solve(ArrayList<Integer> a) {
+        ArrayList<Integer> leaders = new ArrayList<>();
+        int n = a.size();
+        leaders.add(a.get(n-1));
+        for(int j = n-2;j>=0;j--){
+            if(a.get(j) > leaders.get(leaders.size()-1)){
+                leaders.add(a.get(j));
+            }
+        }
+        return leaders;
+    }
+}
