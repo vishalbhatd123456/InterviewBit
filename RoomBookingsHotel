@@ -1,0 +1,23 @@
+public class Solution {
+    public boolean hotel(ArrayList<Integer> arrive, ArrayList<Integer> depart, int K) {
+        Collections.sort(arrive);
+        Collections.sort(depart);
+        int roomsReq = 0;
+        int i = 0;
+        int j = 0;
+        while(i < arrive.size() && j < arrive.size() && roomsReq <= K){
+            if(arrive.get(i) < depart.get(j)){
+                i++;
+                roomsReq++;
+            }else{
+                j++;
+                roomsReq--;
+            }
+        }
+        if(roomsReq <= K){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
